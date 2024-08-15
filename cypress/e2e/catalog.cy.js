@@ -2,8 +2,7 @@
 
 describe("Каталог", () => {
     it("Категорії каталогу", () => {
-        cy.visit("https://bukarka.vercel.app/");
-        cy.wait(7000);
+        cy.visitBukarka();
 
   const categories = [
   "Усі книги",

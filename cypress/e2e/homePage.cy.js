@@ -2,8 +2,7 @@
 
 describe("Головна сторінка сайту", () => {
     it("Функції головної сторінки", () => {
-        cy.visit("https://bukarka.vercel.app/");
-        cy.wait(5000);
+        cy.visitBukarka();
         cy.get('.sc-kpdYNm > .sc-leGcMD').click(); //Каталог
         cy.get('.sc-kiTBBF.eWyMGQ').click(); //X
         cy.get('.sc-kTNzjB > .sc-gfMXTh > :nth-child(1) > .sc-ckafRU').click(); //Обране

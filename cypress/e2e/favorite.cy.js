@@ -2,11 +2,15 @@
 
 describe ("Обране", () => {
     it ("Додавання та видалення з обраного", () => {
-        cy.visit("https://bukarka.vercel.app/");
-        cy.wait(7000);
-        cy.get('#root > div.sc-beySPh.irQFrm > div > div:nth-child(2) > div.slider-container > div > div.slick-list > div > div:nth-child(2) > div > div > div.sc-bHduTz.ihvAmM > div > svg > path')
+        cy.visitBukarka();
+        cy.get('input[placeholder="Знайти книгу"]').type("Словник іноземних слів");
+        cy.contains('Знайти').click({ force: true });
+        cy.get('#root > div.sc-beySPh.irQFrm > div > div > div > div > div.sc-dlDPRo.yldDU > div > svg > path')
         .click();
-      
+        cy.get('.sc-kTNzjB > .sc-gfMXTh > :nth-child(1) > .sc-ckafRU').click(); //Обране
+        cy.get('#root > div.sc-beySPh.irQFrm > div > div > div > div > div.sc-dlDPRo.yldDU > div > svg > path')
+        .click();
+        cy.get('.sc-fsYfdN').should('be.visible'); //No favorite books
     });
 
 });
