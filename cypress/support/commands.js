@@ -7,7 +7,7 @@ Cypress.Commands.add('visitBukarka', () => {
 });
 
 Cypress.Commands.add('clickCatalogButton', () => {
-    cy.get('.sc-kpdYNm > .sc-leGcMD').click(); //Кнопка каталог
+    cy.contains('Каталог').click();
     cy.wait(2000);
 });
 
