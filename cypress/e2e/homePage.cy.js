@@ -3,12 +3,12 @@
 describe("Головна сторінка сайту", () => {
     it("Функції головної сторінки", () => {
         cy.visitBukarka();
-        cy.get('.sc-kpdYNm > .sc-leGcMD').click(); //Каталог
+        cy.contains('Каталог').click();
         cy.get('.sc-kiTBBF.eWyMGQ').click(); //X
-        cy.get('.sc-kTNzjB > .sc-gfMXTh > :nth-child(1) > .sc-ckafRU').click(); //Обране
-        cy.get('.sc-kTNzjB > .sc-gfMXTh > :nth-child(2) > .sc-ckafRU').click(); //Кошик
+        cy.contains('Обране').click();
+        cy.contains('Кошик').click();
         cy.get('.sc-kiTBBF.eWyMGQ').click(); //X
-        cy.get('.sc-kTNzjB > .sc-gfMXTh > :nth-child(3) > .sc-ckafRU').click(); //Вхід
+        cy.contains('Вхід / Реєстрація').click();
         cy.get('.sc-kiTBBF.eWyMGQ').click(); //X
 
         cy.contains('a', 'Про магазин').click();
