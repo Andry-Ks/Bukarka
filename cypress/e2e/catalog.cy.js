@@ -1,7 +1,7 @@
 "use strict";
 
-describe("Каталог", () => {
-    it("Категорії каталогу", () => {
+describe("Catalog", () => {
+    it("Catalog Categories", () => {
         cy.visitBukarka();
 
   const categories = [

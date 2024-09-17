@@ -3,7 +3,7 @@
 
 Cypress.Commands.add('visitBukarka', () => {
     cy.visit("https://bukarka.vercel.app/");
-    cy.wait(5000); //Затримка, мс
+    cy.wait(5000);
 });
 
 Cypress.Commands.add('clickCatalogButton', () => {
@@ -13,5 +13,5 @@ Cypress.Commands.add('clickCatalogButton', () => {
 
 Cypress.Commands.add('navigateToCategory', (categoryName) => {
     cy.clickCatalogButton();
-    cy.contains('a', categoryName).click(); // Перехід до категорії
+    cy.contains('a', categoryName).click();
 });

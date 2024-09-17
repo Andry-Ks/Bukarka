@@ -1,7 +1,7 @@
 "use strict";
 
-describe ("Обране", () => {
-    it ("Додавання та видалення з обраного", () => {
+describe ("Favorite", () => {
+    it ("Add and remove from favorites", () => {
         cy.visitBukarka();
         cy.get('input[placeholder="Знайти книгу"]').type("Словник іноземних слів");
         cy.contains('Знайти').click({ force: true });

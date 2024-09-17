@@ -6,18 +6,18 @@ const myCity = "Київ";
 const myAddress = "вул. Хрещатик, буд. 10, кв. 200";
 const wareHouse = "№11";
 
-describe ("Шлях не зареєстрованого користувача до оформлення замовлення", () => {
-    it ("Оформлення замовлення на купівлю книг", () => {
+describe ("The path of an unregistered user to placing an order", () => {
+    it ("Placing an order for purchasing books", () => {
         cy.visitBukarka();
         cy.contains('Кошик').click();
 
         cy.get('button').then(($btn) => {
             if ($btn.hasClass('active')) {
               cy.contains('Видалити все').click();
-              cy.log('Натиснута кнопка Видалити все');
+              cy.log('The "Delete All" button was clicked');
             } else {
               cy.contains('Продовжити покупки').click();
-              cy.log('Натиснута кнопка Продовжити покупки');
+              cy.log('The "Continue Shopping" button was clicked');
             }
           })
 
@@ -27,7 +27,7 @@ describe ("Шлях не зареєстрованого користувача �
         cy.wait(2000);
         cy.get('.sc-gHWSBU > :nth-child(3)').click(); //+
         cy.wait(2000);
-        cy.get('.sc-hNDLBw').click(); //Продовжити покупки
+        cy.get('.sc-hNDLBw').click(); //Continue Shopping
         cy.get('button').filter(':contains("Купити")').eq(1).click();
         cy.contains('Перейти до оформлення').click();
 

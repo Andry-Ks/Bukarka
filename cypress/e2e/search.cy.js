@@ -1,7 +1,7 @@
 "use strict";
 
-describe("Тестування функції пошуку", () => {
-    it("Позитивний тест", () => {
+describe("Testing the search function", () => {
+    it("Positive test with valid data", () => {
         cy.fixture('searchData').then((searchData) => {
             cy.visitBukarka();
             cy.get('input[placeholder="Знайти книгу"]').type(searchData.validSearch);
@@ -10,7 +10,7 @@ describe("Тестування функції пошуку", () => {
         });
     });
     
-    it("Негативний тест", () => {
+    it("Negative test with invalid data", () => {
         cy.fixture('searchData').then((searchData) => {
             cy.visitBukarka();
             cy.get('input[placeholder="Знайти книгу"]').type(searchData.invalidSearch);
@@ -19,7 +19,7 @@ describe("Тестування функції пошуку", () => {
         });
     });
 
-    it ("Пошук за частковою назвою", () => {
+    it ("Positive test with partial name", () => {
         cy.fixture('searchData').then((searchData) => {
             cy.visitBukarka();
             cy.get('input[placeholder="Знайти книгу"]').type(searchData.partialSearch);
@@ -28,7 +28,7 @@ describe("Тестування функції пошуку", () => {
         });
     });
 
-    it ("Пошук за автором", () => {
+    it ("Positive test by author", () => {
         cy.fixture('searchData').then((searchData) => {
             cy.visitBukarka();
             cy.get('input[placeholder="Знайти книгу"]').type(searchData.authorSearch);
